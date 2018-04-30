@@ -1,0 +1,10 @@
+{
+    "roles": [
+        {
+            "path": "/",
+            "methods": ["GET"],
+            "permissions": ["Admin"],
+            "redirect": "/home"
+        }
+    ]
+}

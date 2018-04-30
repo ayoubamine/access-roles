@@ -1,0 +1,31 @@
+{
+  "name": "access-roles",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    
+  },
+  "keywords": [
+    "access",
+    "access-control",
+    "role",
+    "grant",
+    "deny",
+    "allow",
+    "reject",
+    "permission",
+    "possession",
+    "express",
+    "admin",
+    "user",
+    "glob",
+    "policy"
+  ],
+  "author": "Ayoub AMINE <programmer010011@gmail.com>",
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/ayoubamine/access-roles"
+}
