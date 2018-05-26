@@ -3,15 +3,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 const accessRoles = require('..')(app);
 
-app.use((req, res, next) => {
-	req.user = {
-		username: 'ayoubamine',
-		role: 'Admin'
-	};
-	next();
-})
-
-// Options
 const onFailed = (req, res, next) => {
 	res.status(401).json({
 		message: 'Not Authorized'
@@ -23,20 +14,18 @@ const onSuccess = (req, res, next) => {
 };
 
 const beforeEnter = (req, res, next) => {
-	console.log('Before enter');
-}
-
-const afterEnter = (req, res, next) => {
-	console.log('After enter');
+	req.userData = {
+		username: 'ayoubamine',
+		role: 'User'
+	};
 }
 
 var options = {
 	roles: '../config/roles.json',
-	dataSource: 'user',
+	dataSource: 'userData',
 	onSuccess: onSuccess,
 	onFailed: onFailed,
-	beforeEnter: beforeEnter,
-	afterEnter: afterEnter
+	beforeEnter: beforeEnter
 };
 
 accessRoles(options, (err) => {
