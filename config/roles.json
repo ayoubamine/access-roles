@@ -1,10 +1,10 @@
 {
     "roles": [
         {
-            "path": "/",
+            "path": "/admin",
             "methods": ["GET"],
             "permissions": ["Admin"],
-            "redirect": "/home"
-        }
+            "redirect": "/"
+				}
     ]
 }

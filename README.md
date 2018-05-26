@@ -20,27 +20,27 @@ Create a new accessRoles middleware function using the given **options** object 
 
 - **roles (Required)**
 Filename contains roles array:
-    - **path** (Required): string, handled by express.
-    - **methods** (Optional, Default: ['GET']): array,  HTTP methods array.
-    - **permissions** (Required): array, permissions allowed.
-    - **redirect** (Optional): string, Redirect a request, handled by express.
+    - **path** (Required): Handled by express.
+    - **methods** (Default: ['GET']): HTTP methods array.
+    - **permissions** (Required): Permissions allowed.
+    - **redirect** Redirect a request, handled by express.
 
 - **dataSource (Required)**
 Object in req contains user info.
 
-- **onSuccess (Optional)**
+- **onSuccess**
 Response on success.
 
-- **onFailed (Optional)**
+- **onFailed**
 Response on failed (Default: { status: 401, message: 'Not Authorized' }).
 
-- **beforeEnter (Optional)**
+- **beforeEnter**
 Called before enter.
 
-- **afterEnter (Optional)**
+- **afterEnter**
 Called after enter.
 
-- **callback (Optional)**
+- **callback**
 The callback(err[name, message]).
 
 Example
@@ -61,7 +61,7 @@ Example
 ```javascript
 var options = {
     roles: './config/roles.json',
-    dataSource: 'user',
+    dataSource: 'userData',
     onSuccess: onSuccess,
     onFailed: onFailed,
     beforeEnter: beforeEnter,
@@ -71,17 +71,14 @@ var options = {
 
 ```javascript
 accessRoles(options, (err) => {
-    if(!err) {
-        console.log('Done');
-    } else {
-        console.log(err);
-    }
+	if (err) throw err;
 });
 ```
 
 # TODO
 
-- test
+- Tests
+- Give me suggestions ??
 
 # LICENSE
 
