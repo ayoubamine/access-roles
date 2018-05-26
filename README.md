@@ -37,9 +37,6 @@ Response on failed (Default: { status: 401, message: 'Not Authorized' }).
 - **beforeEnter**
 Called before enter.
 
-- **afterEnter**
-Called after enter.
-
 - **callback**
 The callback(err[name, message]).
 
@@ -59,13 +56,24 @@ Example
 ```
 
 ```javascript
+function onSuccess(req, res, next) {
+	// ...
+}
+
+function onFailed(req, res, next) {
+	// ...
+}
+
+function beforeEnter(req, res, next) {
+	// req.userData = ...;
+}
+
 var options = {
     roles: './config/roles.json',
     dataSource: 'userData',
     onSuccess: onSuccess,
     onFailed: onFailed,
-    beforeEnter: beforeEnter,
-    afterEnter: afterEnter
+    beforeEnter: beforeEnter
 };
 ```
 
